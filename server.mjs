@@ -49,13 +49,13 @@ app.post('/upd', (req, res) => {
     }
 });
 
-app.delete('/del', (req, res) => {
+app.post('/del', (req, res) => {
     let a = (req.body.del) - 1;
     
     if (users[a]) {
 
         users[a] = {};
-        users.length-=1
+        users.splice(a, 1);
         res.redirect('/');
     
       } else {
