@@ -1,0 +1,67 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>CRUD</title>
+</head>
+<body>
+    <div class="container">
+      <div class="form-style-6" id="one" >
+        <h1>Form</h1>
+        <form method="POST" action="/users" >
+            <input type="text" name="field1" placeholder="Your Name" />
+            <input type="email" name="field2" placeholder="Email Address" />
+            <textarea name="field3" placeholder="Type your Message"></textarea>
+            <input type="submit" style="cursor: pointer;" value="Send" />
+        </form>
+    </div>
+
+    <div class="form-style-6" id="Two" >
+      <h1>Update</h1>
+      <form method="POST" action="/upd" >
+          <input type="number" name="del" placeholder="Id" />
+          <input type="text" name="field1" placeholder="Your Name" />
+          <input type="email" name="field2" placeholder="Email Address" />
+          <textarea name="field3" placeholder="Type your Message"></textarea>
+          <input style="background-color:#5bc0de; cursor: pointer; " type="submit" value="Update" />
+      </form>
+    </div>
+
+    <div class="form-style-6" id="Three" >
+      <h1>Delete</h1>
+      <form method="POST" action='/del' >
+          <input type="number" name="del" placeholder="Id" />
+          <input style="background-color:#d9534f ;cursor: pointer;"type="submit" value="Delete" />
+      </form>
+    </div>
+
+  </div>
+    
+  <br><br><br>
+      <table class="wp-table">
+        
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+          </tr>
+          <% for (let i=0; i < user.length; i++) { %>
+          <tr>
+            <td><%= user[i].id %></td>
+            <td><%= user[i].name %></td>
+            <td><%= user[i].email %></td>
+            <td><%= user[i].address %></td>
+          </tr>
+          <% } %>
+        </table>
+      
+
+
+</body>
+</html>
